@@ -7,7 +7,21 @@ Build a simple express server. Connect a '/hello' route that sends a greeting of
 ------------------------------------------------------------------------------------------------ */
 
 const createServer = () => {
-  // Solution code here...
+
+  var express = require('express');
+  var app = express();
+
+  app.get('/hello', function (req, res) {
+    res.status(200).send('Hello Back!');
+  });
+
+  app.get('/aboutme', function (req, res) {
+    res.status(200).send('I am dot!');
+  });
+
+  app.get('/favoritefoods', function (req, res) {
+    res.status(200).send('I like code!');
+  });
 
   var server = app.listen(3301, function () {
     var port = server.address().port;
@@ -26,9 +40,7 @@ Note: You might need to use the same method more than once.
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
-const count = (target, input) => {
-  // Solution code here...
-};
+const count = (target, input) => input.map(element => element.filter(element => element == target ? 1 : 0)).reduce((acc, val) => acc.concat(val), []).length;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -40,9 +52,7 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
-const totalSum = (input) => {
-  // Solution code here...
-};
+const totalSum = (input) => input.reduce((acc, val) => acc.concat(val), []).reduce((acc, val) => acc + val, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -56,9 +66,7 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
-};
+const divisibleByFiveTwoToThePower = (input) => input.map(element => element.filter(element => !(typeof element === 'string') && element%5 == 0 ? 1 : 0).map(element => Math.pow(2, element)));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stetch Goal
@@ -122,9 +130,7 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let findMaleAndFemale = (data) => {
-  // Solution code here...
-};
+let findMaleAndFemale = (data) => data.filter(char => char.gender == 'male' || char.gender == 'female'? 1 : 0).map(char => char.name).join(' and ');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -132,9 +138,7 @@ CHALLENGE 6 - Stretch Goal
 Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the shortest character.
 ------------------------------------------------------------------------------------------------ */
 
-let findShortest = (data) => {
-  // Solution code here...
-};
+let findShortest = (data) => data.reduce((shortest ,char) => (char.name.length <= shortest.length) ? shortest = char.name : shortest, 'I-am-the-longest-Name-Ever');
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -220,14 +224,14 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return only characters that are male or female', () => {
     expect(findMaleAndFemale(starWarsData)).toStrictEqual('Luke Skywalker and Darth Vader and Leia Organa');
     expect(findMaleAndFemale([{ name: 'person', gender: 'female' }, { gender: 'lol' }, { name: 'persontwo', gender: 'male' }])).toStrictEqual('person and persontwo');
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the name of the shortest character', () => {
     expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
   });
