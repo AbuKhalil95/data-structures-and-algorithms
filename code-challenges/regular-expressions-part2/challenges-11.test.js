@@ -11,9 +11,7 @@ should convert to ["Jane Doe", "James Bond"]
 Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
-const toLastNames = people => {
-  // Solution code here...
-};
+const toLastNames = people => people.map(element => `${element.firstName} ${element.lastName}`);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,9 +21,7 @@ Write a function named validatePin that uses a regular expression pattern to val
 If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePin = (pin) => {
-  // Solution code here...
-};
+const validatePin = (pin) => /^[0-9]{4}$/g.test(pin);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -43,10 +39,7 @@ Return either true or false.
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
 
-const validateEmail = (email) => {
-  // Solution code here...
-};
-
+const validateEmail = (email) => /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?\@[a-zA-Z]+(.net|.com|.org)$/gm.test(email);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -68,9 +61,7 @@ Your function should include a single regular expression pattern that matches an
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
-};
+const validatePhoneNumber = (phoneNumber) => /^((\([0-9]{3}\))|[0-9]{3})(\s|-)?[0-9]{3}(\s|-)?[0-9]{4}$/gm.test(phoneNumber);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
@@ -81,9 +72,7 @@ For example, findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'
 findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>']) returns ['/h1', '/div', '/p'].
 ------------------------------------------------------------------------------------------------ */
 
-const findTagNames = elements => {
-  // Solution code here...
-};
+const findTagNames = elements => elements.reduce((acc,element) => acc.concat(element.match(/\/[\w]+/gm)), []);
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -172,7 +161,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the closing tags', () => {
     expect(findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'])).toStrictEqual(['/h1', '/p']);
   });
