@@ -1,2 +1,8 @@
 # data-structures-and-algorithms
-You will be working on these code challenges with a new partner every day. This will also be your partner for the paired lab. Code challenges that are assigned when heading into the weekend should be completed independently.
+
+## 301 DSA (Simplified)
+
+## 401 DSA (The real deal)
+
+1 - Reversing Arrays
+2 - Shifting Array
