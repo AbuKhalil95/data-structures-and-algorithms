@@ -17,7 +17,7 @@ function BinarySearch(arr, value) {
   let exists = true;
 
   for (let i = 0; actualSteps <= arr.length; i+= currentPos) {
-    console.log("i: " + i, "currentPos: " + currentPos, "currentValue: " + arr[i], "value: " + value);
+    // console.log("i: " + i, "currentPos: " + currentPos, "currentValue: " + arr[i], "value: " + value);
     currentPos = Math.abs(currentPos); // resets into positive after addition
 
     if (arr[i] != value && flagExist) {   // its impossible not to find match when halving reaches 1 and moves to that position
@@ -42,4 +42,6 @@ function BinarySearch(arr, value) {
   return exists ? actualSteps-1 : -1;
 }
 
-BinarySearch(sortedArrays[1], lookup[1]);
+BinarySearch(sortedArrays[0], lookup[0]);
+
+module.exports = BinarySearch;

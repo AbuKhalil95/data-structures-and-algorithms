@@ -15,4 +15,4 @@ Return the index of the array’s element that is equal to the search key, or -1
 Three different if statements are used inside the loop for navigating up and down halves and confirming match, in addition to 
 two more if statements to flag no match if step 1 has reached and the last index been stepped into.
 
-a return statement of steps taken before reaching the match, or -1 to indicate no match.
+Return the value of steps taken before reaching the match, or -1 to indicate no match.
