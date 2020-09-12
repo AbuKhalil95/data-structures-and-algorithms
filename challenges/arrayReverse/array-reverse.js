@@ -7,20 +7,26 @@ let arraysToReverse = [
      173, 179, 181, 191, 193, 197, 199]
 ];
 
-function reverseArray(arr){
+function reverseArray_1(arr){
   // method 1
-  // let tempArr = [];
-  // for(i = 0; i < arr.length; i++){
-  //   tempArr[i] = arr[arr.length - i - 1];
-  // }
-  // return tempArr;
+  let tempArr = [];
+  for(i = 0; i < arr.length; i++){
+    tempArr[i] = arr[arr.length - i - 1];
+  }
+  return tempArr;
+}
 
+
+function reverseArray_2(arr){
   // method 2
-  // let newArr = arr.map((element, index) => {
-  //   return element = arr[arr.length - index - 1];
-  // });
-  // return newArr;
+  let newArr = arr.map((element, index) => {
+    return element = arr[arr.length - index - 1];
+  });
+  return newArr;
+}
 
+
+function reverseArray_3(arr){
   // method 3
   let recursiveArr = [];
   function recurse(arr) {
@@ -35,4 +41,8 @@ function reverseArray(arr){
   return recursiveArr;
 }
 
-arraysToReverse.map(arr => arr = reverseArray(arr));
+arraysToReverse.map(arr => arr = reverseArray_1(arr));
+
+module.exports.reverseArray_1 = reverseArray_1;
+module.exports.reverseArray_2 = reverseArray_2;
+module.exports.reverseArray_3 = reverseArray_3;
