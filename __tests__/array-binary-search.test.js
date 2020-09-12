@@ -10,7 +10,7 @@ describe('Array Binary Search', ()=> {
     [1,2,3,4,5,6,7,8,9,10,11,13,17,19,23,29,31,37,41,43,47,53,59]]; 
 
   let lookup = [15, 90, 37, 12];
-  let expected = [1,3,3,-1];
+  let expected = [2,8,11,-1];
   let test = [];
 
   it('Search works properly with the following test arrays', ()=> {

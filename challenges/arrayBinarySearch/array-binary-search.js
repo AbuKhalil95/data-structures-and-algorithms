@@ -12,34 +12,28 @@ let lookup = [
 
 function BinarySearch(arr, value) {
   let currentPos = arr.length - 1;
-  let actualSteps = 0;
   let flagExist = false;
-  let exists = true;
 
-  for (let i = 0; actualSteps <= arr.length; i+= currentPos) {
+  for (let i = 0; i <= arr.length; i+= currentPos) {
     // console.log("i: " + i, "currentPos: " + currentPos, "currentValue: " + arr[i], "value: " + value);
     currentPos = Math.abs(currentPos); // resets into positive after addition
 
     if (arr[i] != value && flagExist) {   // its impossible not to find match when halving reaches 1 and moves to that position
-      exists = false;
       break;
     }
     if (currentPos == 1) {flagExist = true}; // prepare last move 
 
     if (arr[i] < value) {
       currentPos = Math.ceil(currentPos/2);
-      actualSteps ++;
     }
     if (arr[i] == value) {
-      break;
+      return i;
     }
     if (arr[i] > value) {
       currentPos = Math.ceil(currentPos/-2);
-      actualSteps ++;
     }
   }
-
-  return exists ? actualSteps-1 : -1;
+  return -1;
 }
 
 BinarySearch(sortedArrays[0], lookup[0]);
