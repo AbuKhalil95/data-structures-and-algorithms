@@ -1,6 +1,7 @@
 # Linked-list functions
 Linked lists are such nested objects that points to each others, multiple implementations of such concept is done for a linear linked as a start is done in this challenge.
 
+# Class-05
 ## Challenge Description
 The challenge involves applying 3 methods, an insert() with O(1) time complexity, an includes() that checks for a value, and finally a toString() that prints out the whole linked list as values with arrows.
 
@@ -19,3 +20,14 @@ First method implements a new linkedList, define first element as head, then wor
 Second method checks for the whole array using a while loop that checks for .next, then checks for its value and then move to the next node to do the same till the end, returns true for match or false for no match.
 
 Third method concatenates the the output with a string as it loops through each node, and ends with a null concatenate, then outputs the string. 
+
+# Class-06
+
+## Challenge Description
+The challenge involves applying 3 methods, an append() and both insertBefore() and insertAfter() values.
+
+## Approach & Efficiency
+First method is similar to the previous lab insert(), with a loop, second method and third methods are also similar, and all three have a loop, thus time complexity is O(n).
+
+## Solution
+append() has a trivial solution and only looks at the end of the LL, insertBefore and insertAfter have the same method except for the if statement check, before would check the nextValue if its equal to our parameter, after would check for the current value instead, both would assume the current to be the node, and node.next to point to the current.next

@@ -20,15 +20,11 @@ class LinkedList {
     let node = new Node(value); // to the old node and will be inserted afterwards.
     if (!this.head) {
         this.head = node;
+        this.tail = this.head;
         return this;
     }
 
-    let currentNode;
-    if (!this.tail) {
-      currentNode = this.head;
-    } else (
-      currentNode = this.tail
-    )
+    let currentNode = this.tail;
 
     currentNode.next = node;
     this.tail = currentNode.next;
@@ -58,6 +54,58 @@ class LinkedList {
     }
     output += ' NULL';
     return output;
+  }
+
+  append(value) {
+    let node = new Node(value);
+    if (!this.head) {
+        this.head = node;
+        this.tail = this.head;
+        return this;
+    }
+
+    let currentNode = this.head;
+    while (currentNode.next) {
+      currentNode = currentNode.next;
+    }
+
+    currentNode.next = node;
+    this.tail = currentNode.next;
+    return this;
+  }
+
+  insertBefore(value, newVal) {
+    let node = new Node(value);
+    if (!this.head) {
+        this.head = node;
+        return this;
+    }
+
+    let currentNode = this.head;
+    while (currentNode.next.value != newVal) {
+      currentNode = currentNode.next;
+    }
+
+    node.next = currentNode.next;
+    currentNode.next = node;
+    return this;
+  }
+
+  insertAfter(value, newVal) {
+    let node = new Node(value);
+    if (!this.head) {
+        this.head = node;
+        return this;
+    }
+
+    let currentNode = this.head;
+    while (currentNode.value != newVal) {
+      currentNode = currentNode.next;
+    }
+
+    node.next = currentNode.next;
+    currentNode.next = node;
+    return this;
   }
 }
 
