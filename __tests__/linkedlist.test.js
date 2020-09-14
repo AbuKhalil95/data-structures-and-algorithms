@@ -12,7 +12,7 @@ describe('Node Module', ()=> {
     });
 });
 
-describe('Linked List Module', ()=> {
+describe('Linked List Module class-05', ()=> {
     
     it('constructor() initializes empty linkedList', ()=> {
         let list = new LL();
@@ -82,5 +82,49 @@ describe('Linked List Module', ()=> {
 
         expect(list.toString()).toEqual('{ First One } -> { Second One } -> { Third One } -> { Fourth One } ->  NULL');
         console.log("list of 5 values -----> ", list);
+    });
+})
+
+
+describe('Linked List Module class-06', ()=> {
+    
+    it('Can successfully add a node to the end of the linked list', ()=> {
+        let list = new LL();
+        let initialValue = 'Appended';
+        list.append(initialValue);
+        expect(list.tail.value).toEqual(initialValue);
+    });
+
+    it('Can successfully add multiple nodes to the end of a linked list', ()=> {
+        let list = new LL();
+        let initialValue = 'First One';
+        list.append(initialValue);
+        expect(list.head.value).toEqual(initialValue);
+
+        let newValue = 'Second Value';
+        list.append(newValue);
+        expect(list.head.value).toEqual(initialValue);
+        expect(list.head.next).not.toBeNull();
+        expect(list.head.next.value).toEqual(newValue);
+       
+        console.log("list of two values -----> ", list);
+    });
+
+    it('Can successfully insert a node before a node located i the middle of a linked list', ()=> {
+        let list = new LL();
+        let value1 = 'First One';
+        let value2 = 'Second One';
+        let value3 = 'Third One';
+
+        list.append(value1);
+        list.append(value2);
+        list.append(value3);
+
+        console.log('before insert ==> ', list.head.next);
+        list.insertBefore(value2, value3);
+        console.log('after insert ==> ', list.head.next);
+
+        expect(list.head.next.next.value).toEqual(list.head.next.value);
+        expect(list.head.next.next.next.value).toEqual(value3);
     });
 })
