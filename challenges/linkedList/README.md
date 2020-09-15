@@ -2,7 +2,7 @@
 Linked lists are such nested objects that points to each others, multiple implementations of such concept is done for a linear linked as a start is done in this challenge.
 
 # Class-07
-# Challenge Summary
+## Challenge Description
 This challenge makes use of previous methods to apply the method of getting the value from kth index of the end.
 
 ## Challenge Description
