@@ -44,8 +44,6 @@ describe('Linked List Module class-05', ()=> {
         expect(list.head.value).toEqual(initialValue);
         expect(list.head.next).not.toBeNull();
         expect(list.head.next.value).toEqual(newValue);
-       
-        console.log("list of two values -----> ", list);
     });
 
     it('includes() works with true and false matches', () => {
@@ -81,7 +79,6 @@ describe('Linked List Module class-05', ()=> {
         list.insert(value5);
 
         expect(list.toString()).toEqual('{ First One } -> { Second One } -> { Third One } -> { Fourth One } ->  NULL');
-        console.log("list of 5 values -----> ", list);
     });
 })
 
@@ -106,8 +103,6 @@ describe('Linked List Module class-06', ()=> {
         expect(list.head.value).toEqual(initialValue);
         expect(list.head.next).not.toBeNull();
         expect(list.head.next.value).toEqual(newValue);
-       
-        console.log("list of two values -----> ", list);
     });
 
     it('Can successfully insert a node before a node located i the middle of a linked list', ()=> {
@@ -120,11 +115,85 @@ describe('Linked List Module class-06', ()=> {
         list.append(value2);
         list.append(value3);
 
-        console.log('before insert ==> ', list.head.next);
         list.insertBefore(value2, value3);
-        console.log('after insert ==> ', list.head.next);
 
         expect(list.head.next.next.value).toEqual(list.head.next.value);
         expect(list.head.next.next.next.value).toEqual(value3);
+    });
+})
+    
+describe('Linked List Module class-07', ()=> {
+
+    it('kthFromEnd(k) returns value that is 6 from the end of a LL length 5', () => {
+        let list = new LL();
+        let value1 = 'First One';
+        let value2 = 'Second One';
+        let value3 = 'Third One';
+        let value4 = 'Fourth One';
+        let value5 = 'Fifth One';
+    
+        list.insert(value1);
+        list.insert(value2);
+        list.insert(value3);
+        list.insert(value4);
+        list.insert(value5);
+        expect(list.kthFromEnd(6)).toEqual('Length is too short');
+    });
+
+    it('kthFromEnd(k) returns value that is 5 from the end of a LL length 5', () => {
+        let list = new LL();
+        let value1 = 'First One';
+        let value2 = 'Second One';
+        let value3 = 'Third One';
+        let value4 = 'Fourth One';
+        let value5 = 'Fifth One';
+    
+        list.insert(value1);
+        list.insert(value2);
+        list.insert(value3);
+        list.insert(value4);
+        list.insert(value5);
+        expect(list.kthFromEnd(5)).toEqual('First One');
+    });
+
+    it('kthFromEnd(k) returns value that is -5 from the end of a LL length 5, flips to search from the beginning', () => {
+        let list = new LL();
+        let value1 = 'First One';
+        let value2 = 'Second One';
+        let value3 = 'Third One';
+        let value4 = 'Fourth One';
+        let value5 = 'Fifth One';
+    
+        list.insert(value1);
+        list.insert(value2);
+        list.insert(value3);
+        list.insert(value4);
+        list.insert(value5);
+        expect(list.kthFromEnd(-5)).toBeNull;
+    });
+
+    it('kthFromEnd(k) returns value that is 1 from the end of a LL length 1', () => {
+        let list = new LL();
+        let value1 = 'First One';
+
+    
+        list.insert(value1);
+        expect(list.kthFromEnd(1)).toEqual('First One');
+    });
+
+    it('kthFromEnd(k) returns value that is 3 from the end of a LL length 5', () => {
+        let list = new LL();
+        let value1 = 'First One';
+        let value2 = 'Second One';
+        let value3 = 'Third One';
+        let value4 = 'Fourth One';
+        let value5 = 'Fifth One';
+    
+        list.insert(value1);
+        list.insert(value2);
+        list.insert(value3);
+        list.insert(value4);
+        list.insert(value5);
+        expect(list.kthFromEnd(3)).toEqual('Third One');
     });
 })
