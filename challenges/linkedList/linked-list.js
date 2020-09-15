@@ -107,6 +107,36 @@ class LinkedList {
     currentNode.next = node;
     return this;
   }
+
+  kthFromEnd(k) {
+    let targetNode = this.head;
+    let endNode = this.head;
+    let distance = 0;
+
+    if (!this.head) {
+      return 'Empty LL';
+    }
+
+    while (endNode) {
+      endNode = endNode.next;
+      distance ++;
+      if (k > 0) {
+        if (distance > k){
+          targetNode = targetNode.next;
+        }
+      } else if (k < 0) {
+        if (distance == Math.abs(k)) {
+          return endNode && endNode.value || null;
+        }
+      }
+    }
+
+    if (!(distance >= Math.abs(k))) {
+      return 'Length is too short';
+    }
+
+    return targetNode.value;
+  }
 }
 
 module.exports.Node = Node;
