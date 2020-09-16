@@ -4,8 +4,6 @@ Linked lists are such nested objects that points to each others, multiple implem
 # Class-07
 ## Challenge Description
 This challenge makes use of previous methods to apply the method of getting the value from kth index of the end.
-
-## Challenge Description
 The method simply takes in a single input denotes how far is the end from that value.
 
 ## Approach & Efficiency
