@@ -48,7 +48,7 @@ class LinkedList {
     let currentNode = this.head;
     let output = '';
 
-    while(currentNode.next) {
+    while(currentNode) {
       output += `{ ${currentNode.value} } -> `
       currentNode = currentNode.next;
     }
@@ -92,14 +92,14 @@ class LinkedList {
   }
 
   insertAfter(value, newVal) {
-    let node = new Node(value);
+    let node = new Node(newVal);
     if (!this.head) {
         this.head = node;
         return this;
     }
 
     let currentNode = this.head;
-    while (currentNode.value != newVal) {
+    while (currentNode.value != value) {
       currentNode = currentNode.next;
     }
 
