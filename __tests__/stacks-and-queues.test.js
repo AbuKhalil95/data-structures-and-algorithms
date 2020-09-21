@@ -68,8 +68,8 @@ describe('Stack Linear LinkedList DS class-010', ()=> {
   it('Calling pop or peek on empty stack raises exception', ()=> {
     let stack = new Stack();
     
-    expect(stack.pop()).toEqual('Empty Stack!');
-    expect(stack.peek()).toEqual('Empty Stack!');
+    expect(stack.pop()).toBeNull();
+    expect(stack.peek()).toBeNull();
   });
 });
 

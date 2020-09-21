@@ -24,15 +24,16 @@ class Stack {
 
   pop() {
     if(!this.top) {
-      return 'Empty Stack!';
+      return null;
     }
+    let popped = this.top.value;
     this.top = this.top.next;
 
-    return this;
+    return popped;
   }
 
   peek() {
-    let string = this.top ? this.top.value :  'Empty Stack!';
+    let string = this.top ? this.top.value : null;
     return string;
   }
 

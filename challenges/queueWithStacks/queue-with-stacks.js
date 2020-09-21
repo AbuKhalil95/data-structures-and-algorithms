@@ -10,22 +10,23 @@ class PseudoQueue {
 
   enqueue(value) {
     this.Stack_1.push(value);
+    return this.Stack_1.peek();
   }
 
   dequeue() {
-    if (!this.Stack_2.top) {
-      if (!this.Stack_1.top) {
-        return ('Empty Stack!');
+    if (!this.Stack_2.peek()) {
+      if (!this.Stack_1.peek()) {
+        return null;
       }
 
-      while(this.Stack_1.top) {
-        this.Stack_2.push(this.Stack_1.top.value);
+      while(this.Stack_1.peek()) {
+        this.Stack_2.push(this.Stack_1.peek());
         this.Stack_1.pop();  
       }
     }
-
-    let extract = this.Stack_2.top.value;
-    this.Stack_2.pop();
+    
+    //  = this.Stack_2.peek();
+     let extract = this.Stack_2.pop();
     return extract;
   }
 }
