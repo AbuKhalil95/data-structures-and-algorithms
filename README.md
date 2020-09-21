@@ -9,7 +9,13 @@
 
 4 - [Linked List](challenges/linkedList)
 
- 5 - .. To Be Continued
+5 - [Linked List Zipped](challenges/llZip)
+
+6 - [Stacks and Queues](challenges/stacksAndQueues)
+
+7 - [Queue with Stacks](challenges/queueWithStacks)
+
+8 - [Fifo Animal Shelter](challenges/fifoAnimalShelter)
 
 ## 301 DSA (Simplified)
 1 - [Array Methods - forEach](code-challenges/for-each)
