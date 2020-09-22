@@ -17,6 +17,8 @@
 
 8 - [Fifo Animal Shelter](challenges/fifoAnimalShelter)
 
+9 - [Brackets Balancing Algorithm](challenges/multiBracketValidation)
+
 ## 301 DSA (Simplified)
 1 - [Array Methods - forEach](code-challenges/for-each)
 
