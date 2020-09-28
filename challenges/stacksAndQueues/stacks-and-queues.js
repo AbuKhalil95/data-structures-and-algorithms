@@ -67,16 +67,18 @@ class Queue {
 
     this.front = null;
     let currentNode = this.back;
-    if (currentNode.next) {
-      while(currentNode.next.next) {
-        currentNode = currentNode.next;
-      }
-      
-      this.front = currentNode;
-      this.front.next = null;
+    while (currentNode.next) {
+      currentNode = currentNode.next;
     }
 
-    return currentNode;
+    this.front = currentNode;
+
+    if (!this.front) {
+      this.back = null;
+    }
+
+    console.log('dataaaaaaaaaaaa in queue \n',  currentNode, this.front)
+    return this.front;
   }
 
   peek() {
@@ -90,3 +92,4 @@ class Queue {
 
 module.exports.Stack = Stack
 module.exports.Queue = Queue
+module.exports.Node = Node

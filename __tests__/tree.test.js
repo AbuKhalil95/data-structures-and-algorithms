@@ -1,3 +1,4 @@
+
 const BinaryTree = require('../challenges/tree/tree').BinaryTree;
 const Node = require('../challenges/tree/tree').Node;
 
@@ -8,14 +9,19 @@ describe('Binary Tree DS class-15', ()=> {
     let secondValue = new Node('Second One');
     let thirdValue = new Node('Third One');
     let fourthValue = new Node('Fourth One');
+    let fifthValue = new Node('Fifth One');
+    let sixthValue = new Node('Sixth One');
+    let seventhValue = new Node('Seventh One');
+    let eighthValue = new Node('Eighth One');
 
     binaryTree.add(initialValue);
     binaryTree.add(secondValue);
     binaryTree.add(thirdValue);
     binaryTree.add(fourthValue);
-    binaryTree.add(fourthValue);
-    binaryTree.add(fourthValue);
-    binaryTree.add(fourthValue);
+    binaryTree.add(fifthValue);
+    binaryTree.add(sixthValue);
+    binaryTree.add(seventhValue);
+    binaryTree.add(eighthValue);
 
     // binaryTree.add(secondValue);
     // binaryTree.add(thirdValue);

@@ -2,6 +2,7 @@
 
 const Stack = require('../challenges/stacksAndQueues/stacks-and-queues').Stack;
 const Queue = require('../challenges/stacksAndQueues/stacks-and-queues').Queue;
+const Node = require('../challenges/stacksAndQueues/stacks-and-queues').Node;
 
 describe('Stack Linear LinkedList DS class-010', ()=> {
     
@@ -82,42 +83,42 @@ describe('Queue Linear LinkedList DS class-010', ()=> {
 
   it('Can successfully enqueue into a queue', ()=> {
       let queue = new Queue();
-      let initialValue = 'First One';
+      let initialValue = new Node('First One');
 
       queue.enqueue(initialValue);
-      expect(queue.front.value).toEqual(initialValue);
+      expect(queue.peek()).toEqual(initialValue);
   });
 
   it('Can successfully enqueue multiple values into a queue', ()=> {
       let queue = new Queue();
-      let initialValue = 'First One';
-      let secondValue = 'Second One';
-      let thirdValue = 'Third One';
+      let initialValue = new Node('First One');
+      let secondValue = new Node('Second One');
+      let thirdValue = new Node('Third One');
 
       queue.enqueue(initialValue);
       queue.enqueue(secondValue);
       queue.enqueue(thirdValue);
-      expect(queue.back.value).toEqual(thirdValue);
+      expect(queue.peek()).toEqual(initialValue);
   });
 
   it('Can successfully dequeue out of a queue the expected value', ()=> {
     let queue = new Queue();
-    let initialValue = 'First One';
-    let secondValue = 'Second One';
-    let thirdValue = 'Third One';
+    let initialValue = new Node('First One');
+    let secondValue = new Node('Second One');
+    let thirdValue = new Node('Third One');
 
     queue.enqueue(initialValue);
     queue.enqueue(secondValue);
     queue.enqueue(thirdValue);
     queue.dequeue();
-    expect(queue.front.value).toEqual(secondValue);
+    expect(queue.peek()).toEqual(secondValue);
   });
 
   it('Can successfully empty a queue after multiple dequeues', ()=> {
     let queue = new Queue();
-    let initialValue = 'First One';
-    let secondValue = 'Second One';
-    let thirdValue = 'Third One';
+    let initialValue = new Node('First One');
+    let secondValue = new Node('Second One');
+    let thirdValue = new Node('Third One');
 
     queue.enqueue(initialValue);
     queue.enqueue(secondValue);
@@ -125,13 +126,13 @@ describe('Queue Linear LinkedList DS class-010', ()=> {
     queue.dequeue();
     queue.dequeue();
     queue.dequeue();
-    expect(queue.front).toBeNull;
+    expect(queue.peek()).toBeNull;
   });
 
   it('Can successfully peek into a queue, seeing the expected value', ()=> {
     let queue = new Queue();
-    let initialValue = 'First One';
-    let secondValue = 'Second One';
+    let initialValue = new Node('First One');
+    let secondValue = new Node('Second One');
 
     queue.enqueue(initialValue);
     queue.enqueue(secondValue);
@@ -142,6 +143,6 @@ describe('Queue Linear LinkedList DS class-010', ()=> {
     let queue = new Queue();
 
     expect(queue.dequeue()).toEqual('Empty Queue!');
-    expect(queue.peek()).toEqual('Empty Queue!');
+    expect(queue.peek()).toBeNull;
   });
 });
