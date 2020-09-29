@@ -50,15 +50,14 @@ class Queue {
   }
 
   enqueue(value) {                              // initializes front to be always the first ever entered node 
-    let newNode = new Node(value);              // initializes back to be the newest entered node and points towards old back
 
     if(!(this.front && this.back)) {
-      this.front = newNode;
-      this.back = newNode;
+      this.front = value;
+      this.back = value;
       return;
     }
-    newNode.next = this.back;
-    this.back = newNode;
+    value.next = this.back;
+    this.back = value;
   }
 
   dequeue() {                                   // removes front then moves from back to new front that is the oldest node
@@ -68,21 +67,22 @@ class Queue {
 
     this.front = null;
     let currentNode = this.back;
-    console.log('backNode', currentNode);
-    if (currentNode.next) {
-      while(currentNode.next.next) {
-        currentNode = currentNode.next;
-      }
-      
-      console.log('currentNode', currentNode);
-      this.front = currentNode;
-      this.front.next = null;
+    while (currentNode.next) {
+      currentNode = currentNode.next;
     }
+
+    this.front = currentNode;
+
+    if (!this.front) {
+      this.back = null;
+    }
+
+    console.log('dataaaaaaaaaaaa in queue \n',  currentNode, this.front)
+    return this.front;
   }
 
   peek() {
-    let string = this.front ? this.front.value :  'Empty Queue!';
-    return string;
+    return this.front ? this.front :  null;
   }
 
   isEmpty() {
@@ -92,3 +92,4 @@ class Queue {
 
 module.exports.Stack = Stack
 module.exports.Queue = Queue
+module.exports.Node = Node

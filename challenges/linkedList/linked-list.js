@@ -25,8 +25,8 @@ class LinkedList {
     }
 
     let currentNode = this.tail;
-
     currentNode.next = node;
+    console.log('this.head after insertin ===>>', node, this.head);
     this.tail = currentNode.next;
     return this;
   }
@@ -52,7 +52,7 @@ class LinkedList {
       output += `{ ${currentNode.value} } -> `
       currentNode = currentNode.next;
     }
-    output += ' NULL';
+    output += 'NULL';
     return output;
   }
 

@@ -19,6 +19,8 @@
 
 9 - [Brackets Balancing Algorithm](challenges/multiBracketValidation)
 
+10 - [Tree DS Methods](challenges/tree)
+
 ## 301 DSA (Simplified)
 1 - [Array Methods - forEach](code-challenges/for-each)
 

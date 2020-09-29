@@ -76,9 +76,9 @@ describe('Linked List Module class-05', ()=> {
         list.insert(value2);
         list.insert(value3);
         list.insert(value4);
-        list.insert(value5);
-
-        expect(list.toString()).toEqual('{ First One } -> { Second One } -> { Third One } -> { Fourth One } ->  NULL');
+        let fifth = list.insert(value5);
+        console.log('fifth', fifth);
+        expect(list.toString()).toEqual('{ First One } -> { Second One } -> { Third One } -> { Fourth One } -> { Fifth One } -> NULL');
     });
 })
 
