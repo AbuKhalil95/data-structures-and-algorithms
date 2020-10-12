@@ -1,5 +1,5 @@
 # Insertion Sort 
-Another iteration of queues with stacks is a special categorization of input.
+Sorting algorithms to sort numbers.
 
 # Class-26
 ## Challenge Description
