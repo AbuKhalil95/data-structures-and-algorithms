@@ -1,6 +1,9 @@
 
 function mergeSort(arr) {
  let n = arr.length;
+ if (arr.some(isNaN)) {
+  return new Error('Input arr can only have numbers');
+ }
 
  if (n > 1) {
    let mid = Math.floor(n/2);

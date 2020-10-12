@@ -7,6 +7,10 @@ describe('Insertion Sort tests ', ()=> {
     expect(mergeSort([8,4,23,42,16,15])).toEqual([4,8,15,16,23,42]);
   });
 
+  it('function returns error while sorting ["data",4,23,42,16,15]', ()=> {
+    expect(mergeSort(['data',4,23,42,16,15])).toBeFalsy;
+  });
+
   it('function works happily while sorting [20,18,12,8,5,-2]', ()=> {
     expect(mergeSort([20,18,12,8,5,-2])).toEqual([-2,5,8,12,18,20]);
   });
