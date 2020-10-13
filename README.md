@@ -21,6 +21,12 @@
 
 10 - [Tree DS Methods](challenges/tree)
 
+11 - [Insertion Sort](challenges/insertionSort)
+
+12 - [Merge Sort](challenges/mergeSort)
+
+13 - [Quick Sort](challenges/quickSort)
+
 ## 301 DSA (Simplified)
 1 - [Array Methods - forEach](code-challenges/for-each)
 
