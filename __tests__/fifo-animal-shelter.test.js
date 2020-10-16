@@ -1,26 +1,26 @@
-const fifoAnimalShelter = require('../challenges/fifoAnimalShelter/fifo-animal-shelter');
+const FifoAnimalShelter = require('../challenges/fifoAnimalShelter/fifo-animal-shelter');
 
 describe('Fifo animal shelter queue with stacks DS class-12', ()=> {
   it('Can successfully enqueue the first dog', ()=> {
-    let queue = new fifoAnimalShelter();
+    let queue = new FifoAnimalShelter();
     let initialValue = 'dog';
 
     expect(queue.enqueue(initialValue)).toEqual(initialValue);
   });
 
   it('Can successfully enqueue a dog and two cats into a queue and dequeue the first value (dog) and return null on dog column', ()=> {
-      let queue = new fifoAnimalShelter();
-      let initialValue = 'dog';
-      let secondValue = 'cat';
+    let queue = new FifoAnimalShelter();
+    let initialValue = 'dog';
+    let secondValue = 'cat';
 
-      queue.enqueue(initialValue);
-      queue.enqueue(secondValue);
-      queue.enqueue(secondValue);
-      expect(queue.dequeue()).toBeNull;
+    queue.enqueue(initialValue);
+    queue.enqueue(secondValue);
+    queue.enqueue(secondValue);
+    expect(queue.dequeue()).toBeNull;
   });
 
   it('Can successfully enqueue a cat and a dog then a cat into a queue and dequeue the first value (cat) and return a cat', ()=> {
-    let queue = new fifoAnimalShelter();
+    let queue = new FifoAnimalShelter();
     let initialValue = 'cat';
     let secondValue = 'dog';
 
@@ -31,7 +31,7 @@ describe('Fifo animal shelter queue with stacks DS class-12', ()=> {
   });
 
   it('Can successfully empty after multiple dequeue', ()=> {
-    let queue = new fifoAnimalShelter();
+    let queue = new FifoAnimalShelter();
     let initialValue = 'dog';
     let secondValue = 'cat';
 
@@ -44,7 +44,7 @@ describe('Fifo animal shelter queue with stacks DS class-12', ()=> {
   });
 
   it('Can successfully enqueue two dogs and two cats into a queue and dequeue the cats (cat)', ()=> {
-    let queue = new fifoAnimalShelter();
+    let queue = new FifoAnimalShelter();
     let initialValue = 'dog';
     let secondValue = 'cat';
 
@@ -57,7 +57,7 @@ describe('Fifo animal shelter queue with stacks DS class-12', ()=> {
   });
 
   it('Can successfully enqueue two dogs and two cats into a queue and dequeue the dogs (dog)', ()=> {
-    let queue = new fifoAnimalShelter();
+    let queue = new FifoAnimalShelter();
     let initialValue = 'dog';
     let secondValue = 'cat';
 
@@ -70,7 +70,7 @@ describe('Fifo animal shelter queue with stacks DS class-12', ()=> {
   });
 
   it('Can successfully enqueue a dog and two cats into a queue and dequeue the first value (dog)', ()=> {
-    let queue = new fifoAnimalShelter();
+    let queue = new FifoAnimalShelter();
     let initialValue = 'dog';
     let secondValue = 'cat';
 
@@ -81,7 +81,7 @@ describe('Fifo animal shelter queue with stacks DS class-12', ()=> {
   });
 
   it('Returns empty queue if actually empty', ()=> {
-    let queue = new fifoAnimalShelter();
+    let queue = new FifoAnimalShelter();
     expect(queue.dequeue()).toBeNull();
   });
 });
