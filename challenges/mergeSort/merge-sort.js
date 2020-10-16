@@ -51,7 +51,7 @@ function merge(left, right, arr) {
       j++;
     }
   } else {
-    console.log(`mergin with left starting at arr[${k}] = ${arr[k]} and left[${i}] = ${left[i]}`, arr, left);
+    console.log(`merging with left starting at arr[${k}] = ${arr[k]} and left[${i}] = ${left[i]}`, arr, left);
     while (i < left.length) {
       arr[k] = left[i];
       k++;

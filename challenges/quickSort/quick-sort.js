@@ -1,6 +1,12 @@
 function QuickSort(arr, left, right) {
+  if (arr.some(isNaN)) {
+    return new Error('Input arr can only have numbers');
+   }
+
+  console.log('starting arrays and positions: =========>', arr, left ,right);
   if (left < right) {
     let position = Partition(arr, left, right);
+    console.log('position at the moment in array', position, arr);
     // Sort the left
     QuickSort(arr, left, position - 1)
     // Sort the right
@@ -15,21 +21,24 @@ function Partition(arr, left, right) {
 
   for(i = left; i < right; i++) {
     if(arr[i] <= pivot) {
+      console.log('these values come true: ', arr[i] <= pivot, arr[i], pivot, i )
       low++;
       Swap(arr, i, low)
     }
   } 
 
+  console.log('swap these anyway: ', arr, right, low + 1)
   Swap(arr, right, low + 1)
   // return the pivot index point
-  return low ++;
+  return low + 1;
 }
 
 function Swap(arr, i, low) {
+  console.log('swap these : ', arr[i], arr[low] )
   let temp;
-  temp == arr[i];
-  arr[i] == arr[low];
-  arr[low] == temp;
+  temp = arr[i];
+  arr[i] = arr[low];
+  arr[low] = temp;
 }
 
 module.exports = QuickSort;

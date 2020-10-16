@@ -20,7 +20,7 @@ describe('bracket Validation tests class-013', ()=> {
     let string = 'this has no parenthesis';
     expect(bracketValidation(string)).toBeTruthy;
   });
-  
+
   it('Can detect early closing bracket', ()=> {
     let string = ']this has one parenthesis';
     expect(bracketValidation(string)).toBeFalsy;

@@ -5,30 +5,30 @@ const Queue = require('../challenges/stacksAndQueues/stacks-and-queues').Queue;
 const Node = require('../challenges/stacksAndQueues/stacks-and-queues').Node;
 
 describe('Stack Linear LinkedList DS class-010', ()=> {
-    
+
   it('constructor() initializes empty stack', ()=> {
-      let stack = new Stack();
-      expect(stack.top).toBeNull();
+    let stack = new Stack();
+    expect(stack.top).toBeNull();
   });
 
   it('Can successfully push onto a stack', ()=> {
-      let stack = new Stack();
-      let initialValue = 'First One';
+    let stack = new Stack();
+    let initialValue = 'First One';
 
-      stack.push(initialValue);
-      expect(stack.top.value).toEqual(initialValue);
+    stack.push(initialValue);
+    expect(stack.top.value).toEqual(initialValue);
   });
 
   it('Can successfully push multiple values onto a stack', ()=> {
-      let stack = new Stack();
-      let initialValue = 'First One';
-      let secondValue = 'Second One';
-      let thirdValue = 'Third One';
+    let stack = new Stack();
+    let initialValue = 'First One';
+    let secondValue = 'Second One';
+    let thirdValue = 'Third One';
 
-      stack.push(initialValue);
-      stack.push(secondValue);
-      stack.push(thirdValue);
-      expect(stack.top.value).toEqual(thirdValue);
+    stack.push(initialValue);
+    stack.push(secondValue);
+    stack.push(thirdValue);
+    expect(stack.top.value).toEqual(thirdValue);
   });
 
   it('Can successfully pop off the stack', ()=> {
@@ -68,37 +68,37 @@ describe('Stack Linear LinkedList DS class-010', ()=> {
 
   it('Calling pop or peek on empty stack raises exception', ()=> {
     let stack = new Stack();
-    
+
     expect(stack.pop()).toBeNull();
     expect(stack.peek()).toBeNull();
   });
 });
 
 describe('Queue Linear LinkedList DS class-010', ()=> {
-    
+
   it('constructor() initializes empty queue', ()=> {
-      let queue = new Queue();
-      expect(queue.front).toBeNull();
+    let queue = new Queue();
+    expect(queue.front).toBeNull();
   });
 
   it('Can successfully enqueue into a queue', ()=> {
-      let queue = new Queue();
-      let initialValue = new Node('First One');
+    let queue = new Queue();
+    let initialValue = new Node('First One');
 
-      queue.enqueue(initialValue);
-      expect(queue.peek()).toEqual(initialValue);
+    queue.enqueue(initialValue);
+    expect(queue.peek()).toEqual(initialValue);
   });
 
   it('Can successfully enqueue multiple values into a queue', ()=> {
-      let queue = new Queue();
-      let initialValue = new Node('First One');
-      let secondValue = new Node('Second One');
-      let thirdValue = new Node('Third One');
+    let queue = new Queue();
+    let initialValue = new Node('First One');
+    let secondValue = new Node('Second One');
+    let thirdValue = new Node('Third One');
 
-      queue.enqueue(initialValue);
-      queue.enqueue(secondValue);
-      queue.enqueue(thirdValue);
-      expect(queue.peek()).toEqual(initialValue);
+    queue.enqueue(initialValue);
+    queue.enqueue(secondValue);
+    queue.enqueue(thirdValue);
+    expect(queue.peek()).toEqual(initialValue);
   });
 
   it('Can successfully dequeue out of a queue the expected value', ()=> {
