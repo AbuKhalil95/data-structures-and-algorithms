@@ -4,12 +4,12 @@ const quickSort = require('../challenges/quickSort/quick-sort');
 
 describe('Insertion Sort tests ', ()=> {
   it('function works happily while sorting [8,4,23,42,16,15]', ()=> {
-    expect(quickSort([8,4,23,42,16,15], 0, [8,4,23,42,16,15].length - 1)).toEqual([4,8,15,16,23,42]);
+    expect(quickSort([8,4,23,42,16,15], 0, 5)).toEqual([4,8,15,16,23,42]);
   });
 
-  // it('function returns error while sorting ["data",4,23,42,16,15]', ()=> {
-  //   expect(quickSort(['data',4,23,42,16,15], 0, ['data',4,23,42,16,15].length - 1)).toBeFalsy;
-  // });
+  it('function returns error while sorting ["data",4,23,42,16,15]', ()=> {
+    expect(quickSort(['data',4,23,42,16,15], 0, ['data',4,23,42,16,15].length - 1)).toBeFalsy;
+  });
 
   it('function works happily while sorting [20,18,12,8,5,-2]', ()=> {
     expect(quickSort([20,18,12,8,5,-2], 0, [20,18,12,8,5,-2].length - 1)).toEqual([-2,5,8,12,18,20]);
