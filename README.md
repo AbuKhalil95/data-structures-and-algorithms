@@ -27,6 +27,8 @@
 
 13 - [Quick Sort](challenges/quickSort)
 
+14 - [Hashtable](challenges/hashtable)
+
 ## 301 DSA (Simplified)
 1 - [Array Methods - forEach](code-challenges/for-each)
 
