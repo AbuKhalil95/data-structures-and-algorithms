@@ -28,7 +28,6 @@ class HashTable {
   add(key, value) {
     // Linked List to represent the value for each key in the bucket
     let hashIndex = this.hash(key);
-    console.log("hashIndex: ",hashIndex)
     if(!this.entries[hashIndex]) {
       // create a new one
       this.entries[hashIndex] = new LinkedList();
@@ -42,12 +41,16 @@ class HashTable {
    * @param {string} key is used to hash and return an index.
    */
   get(key) {
-    let hashIndex = this.hash(key);
+    if (key) {
+      let hashIndex = this.hash(key);
 
-    if(this.entries[hashIndex]) {
-      return this.entries[hashIndex].print();
+      if(this.entries[hashIndex]) {
+        return [this.entries[hashIndex].print(), this.entries[hashIndex].length()];
+      } else {
+        return null;
+      }
     } else {
-      return null;
+      return this.entries;
     }
   }
   /**
@@ -74,6 +77,11 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.size = 0;
+  }
+
+  length() {
+    return this.size;
   }
   
   print() {
@@ -90,6 +98,8 @@ class LinkedList {
 
   append(value) {
     const node = new Node(value);
+    this.size++;
+
     if (!this.head) {
       this.head = node;
     } else {   
