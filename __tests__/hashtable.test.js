@@ -23,7 +23,7 @@ describe('Hashtable API\'s work ', ()=> {
   });
 
   it('Retrieving based on a key returns the value stored', ()=> {
-    expect(myHash.get('Data1')).toBeTruthy;
+    expect(myHash.get('Data1')[0]).toBeTruthy;
   });
 
   it('Successfully returns null for a key that does not exist in the hashtable', ()=> {
@@ -32,7 +32,7 @@ describe('Hashtable API\'s work ', ()=> {
 
   it('Successfully handle a collision within the hashtable', () => {
     myHash.add('Data2', 'I am Yahya');
-    expect(myHash.get('Data2')).toEqual('{ {"Data2":"45456"} } -> { {"Data2":"Yahya is me"} } -> { {"Data2":"I am Yahya"} } -> NULL');
+    expect(myHash.get('Data2')[0]).toEqual('{ {"Data2":"45456"} } -> { {"Data2":"Yahya is me"} } -> { {"Data2":"I am Yahya"} } -> NULL');
   });
 
   it('Successfully retrieve a value from a bucket within the hashtable that has a collision', () => {

@@ -29,6 +29,8 @@
 
 14 - [Hashtable](challenges/hashtable)
 
+14 - [Repeated Words](challenges/repeatedWord)
+
 ## 301 DSA (Simplified)
 1 - [Array Methods - forEach](code-challenges/for-each)
 
