@@ -17,4 +17,4 @@ Modify your function to return a list of the words most frequently used in the p
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 ## Solution
-<!-- Embedded whiteboard image -->
+![whiteboard](../../resources/whiteboard-class-31.png)
