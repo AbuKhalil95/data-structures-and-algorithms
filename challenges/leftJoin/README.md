@@ -12,5 +12,7 @@ The for loop checks for all indices in the left hashtable, and applies the same 
 
 The approach could be reversed by reversing the start, where the check is for the right now. Time complexity is about O(n), where average, best and worst goes through the whole hashtable in a loop. Space complexity is however a O(1) since the operation is within either hashtables and no extra space is taken.
 
+To do right join, its possible to swap positions and still call left join, since they are basically the same but flipped in where to add the common values.
+
 ## Solution
 ![whiteboard](../../resources/whiteboard-class-34.png)
