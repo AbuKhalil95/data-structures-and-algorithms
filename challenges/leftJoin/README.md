@@ -15,4 +15,4 @@ The approach could be reversed by reversing the start, where the check is for th
 To do right join, its possible to swap positions and still call left join, since they are basically the same but flipped in where to add the common values.
 
 ## Solution
-![whiteboard](../../resources/whiteboard-class-34.png)
+![whiteboard](../../resources/whiteboard-class-33.png)
