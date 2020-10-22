@@ -31,7 +31,7 @@
 
 15 - [Repeated Words](challenges/repeatedWord)
 
-16 - [Tree Intersection](challenges/repeatedWord)
+16 - [Tree Intersection](challenges/treeIntersection)
 
 17 - [Left Join](challenges/leftJoin)
 
