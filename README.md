@@ -33,6 +33,8 @@
 
 16 - [Tree Intersection](challenges/treeIntersection)
 
+17 - [Left Join](challenges/leftJoin)
+
 ## 301 DSA (Simplified)
 1 - [Array Methods - forEach](code-challenges/for-each)
 
