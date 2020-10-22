@@ -11,7 +11,7 @@ class HashTable {
   }
   /**
    * hash(key) returns a corresponding index to the key input.
-   * @param {string} key is used to hash and return an index.
+   * @param {String} key is used to hash and return an index.
    */
   hash(key) {
     // return hash Index
@@ -22,7 +22,7 @@ class HashTable {
   }
   /**
    * add(key, value) adds the value to the hashtable along with the key.
-   * @param {string} key is used to hash and return an index.
+   * @param {String} key is used to hash and return an index.
    * @param {*} value is stored along the key in the hashtable.
    */
   add(key, value) {
@@ -38,14 +38,15 @@ class HashTable {
   }
   /**
    * get(key) looks for the key/index and returns a string representing the linkedList at that index.
-   * @param {string} key is used to hash and return an index.
+   * @param {String} key is used to hash and return an index.
+   * returns the [string, length, actual linked list]
    */
   get(key) {
     if (key) {
       let hashIndex = this.hash(key);
 
       if(this.entries[hashIndex]) {
-        return [this.entries[hashIndex].print(), this.entries[hashIndex].length()];
+        return [this.entries[hashIndex].print(), this.entries[hashIndex].length(), this.entries[hashIndex]];
       } else {
         return null;
       }
@@ -55,7 +56,7 @@ class HashTable {
   }
   /**
    * contains(key) returns boolean true if key exists and false otherwise.
-   * @param {string} key is used to hash and return an index.
+   * @param {String} key is used to hash and return an index.
    */
   contains(key) {
     let hashIndex = this.hash(key);
@@ -109,6 +110,19 @@ class LinkedList {
       }
 
       current.next = node;
+    }
+  }
+
+  appendLL(linkedList) {
+    this.size += linkedList.size;
+    if (!this.head) {
+      this.head = linkedList.head;
+    } else {   
+      let current = this.head;
+      while (current.next) {
+        current = current.next;
+      }
+      current.next = linkedList.head;
     }
   } 
 }
