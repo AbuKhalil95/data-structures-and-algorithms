@@ -16,9 +16,7 @@ class BinaryTree {
   constructor() {
     this.root = null;
     this.arr = [];
-
   }
-
   /**
    * adds nodes into the tree whenever empty through breadth first approach
    * @param {Node} node is an input of Node class with value, left and right properties
@@ -51,7 +49,6 @@ class BinaryTree {
       }
     }
   }
-
   /**
    * preOrder traversal, where nodes are registered first then goes to the left then right
    */
@@ -76,7 +73,6 @@ class BinaryTree {
     order(thisNode);
     return arr;
   }
-
   /**
    * inOrder traversal, where nodes traversed maximum left, then registered then traversed right whenever possible
    */
@@ -102,7 +98,6 @@ class BinaryTree {
     order(thisNode);
     return arr;
   }
-
   /**
    * postOrder traversal, where nodes traversed maximum left, then right whenever possible and finally is registered
    */
@@ -128,7 +123,6 @@ class BinaryTree {
     order(thisNode);
     return arr;
   }
-
   /**
    * Using preOrder traversal, this method would check for value and returns boolean true if exists, false otherwise.
    * @param {any} value checks against the tree for that value

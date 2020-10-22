@@ -48,7 +48,7 @@ describe('Binary Tree DS class-15', ()=> {
     binaryTree.add(sixthValue);
     binaryTree.add(seventhValue);
     binaryTree.add(eighthValue);
-
+    console.log(binaryTree);
     expect(binaryTree.root.left.left).toEqual(fourthValue);
   });
 

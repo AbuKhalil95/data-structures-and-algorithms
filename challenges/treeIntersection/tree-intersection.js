@@ -1,30 +1,44 @@
 'use-strict';
-
-const HashTable = require('../../challenges/hashtable/hashtable');
-let hashTable = new HashTable(1024);
+const Stack = require('../stacksAndQueues/stacks-and-queues').Stack;
 
 function tree_intersection(tree_1, tree_2) {
+  const stackA = new Stack();
+  const stackB = new Stack();
 
-  if (!tree.root) {
+  if (!tree_1.root || !tree_2.root) {
     return null;
   }
 
-  let thisNode = tree.root;
+  let nodeA = tree_1.root;
+  let nodeB = tree_2.root;
+  stackA.push(nodeA);
+  stackB.push(nodeB);
   let arr = [];
+  // console.log('------------------- starting while loop -------------------');
 
-  let order = (node) => {
-    arr[arr.length] = node.value;
-
-    if (node.left) {
-      order(node.left);
+  while(stackA.top && stackB.top) {
+    // console.log('------------------- New While -------------------');
+    if(stackA.top.value.value == stackB.top.value.value) {
+      // console.log('push new value:', stackA.top.value.value);
+      arr[arr.length] = stackA.top.value.value;
     }
-    if (node.right) {
-      order(node.right);
+    let newA = stackA.pop();
+    let newB = stackB.pop();
+    // console.log('popped A:', newA.left);
+    // console.log('popped B:', newB.left);
+
+    if (newA.left && newB.left) {
+      // console.log('Push left  >>>>>>>>>>>>>');
+      stackA.push(newA.left);
+      stackB.push(newB.left);
+    }
+    if (newA.right && newB.right) {
+      // console.log('Push right  >>>>>>>>>>>>>');
+      stackA.push(newA.right);
+      stackB.push(newB.right);
     }
   }
-  order(thisNode);
   return arr;
-
 };
 
 module.exports = tree_intersection; 

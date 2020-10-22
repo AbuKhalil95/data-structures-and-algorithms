@@ -1,38 +1,66 @@
 
 const BinaryTree = require('../challenges/tree/tree').BinaryTree;
 const Node = require('../challenges/tree/tree').Node;
-
-let initialValue = new Node('First One');
-let secondValue = new Node('Second One');
-let thirdValue = new Node('Third One');
-let fourthValue = new Node('Fourth One');
-let fifthValue = new Node('Fifth One');
-let sixthValue = new Node('Sixth One');
-let seventhValue = new Node('Seventh One');
-let eighthValue = new Node('Eighth One');
-
-let treeA = new BinaryTree();
-treeA.add(initialValue);
-treeA.add(secondValue);
-treeA.add(thirdValue);
-treeA.add(fourthValue);
-treeA.add(fifthValue);
-treeA.add(sixthValue);
-treeA.add(seventhValue);
-treeA.add(eighthValue);
-
-let treeB = new BinaryTree();
-treeB.add(initialValue);
-treeB.add(secondValue);
-treeB.add(thirdValue);
-treeB.add(fourthValue);
-treeB.add(fifthValue);
-treeB.add(sixthValue);
-treeB.add(seventhValue);
-treeB.add(eighthValue);
+const treeIntersection = require('../challenges/treeIntersection/tree-intersection');
 
 describe('Tree Intersection class-32', ()=> {
-  it('Can successfully find intersections in a tree', ()=> {
+  it('Can successfully find all intersections in a tree', ()=> {
+    let treeA = new BinaryTree();
+    treeA.add(new Node('Data'));
+    treeA.add(new Node('One'));
+    treeA.add(new Node('Three'));
+    treeA.add(new Node(3));
+    treeA.add(new Node(10));
+    treeA.add(new Node('yes'));
 
+    let treeB = new BinaryTree();
+    treeB.add(new Node('Data'));
+    treeB.add(new Node('One'));
+    treeB.add(new Node('Three'));
+    treeB.add(new Node(3));
+    treeB.add(new Node(10));
+    treeB.add(new Node('yes'));
+    let result = treeIntersection(treeA, treeB);
+    expect(result).toEqual([ 'Data', 'Three', 'yes', 'One', 10, 3 ]);
+  });
+
+  it('Can successfully find some intersections in a tree', ()=> {
+    let treeA = new BinaryTree();
+    treeA.add(new Node('Data'));
+    treeA.add(new Node('One'));
+    treeA.add(new Node('Three'));
+    treeA.add(new Node(3));
+    treeA.add(new Node(10));
+    treeA.add(new Node('yes'));
+
+    let treeB = new BinaryTree();
+    treeB.add(new Node('Data'));
+    treeB.add(new Node('One'));
+    treeB.add(new Node('xd'));
+    treeB.add(new Node(3));
+    treeB.add(new Node(10));
+    treeB.add(new Node('no'));
+    let result = treeIntersection(treeA, treeB);
+    expect(result).toEqual(["Data", "One", 10, 3]);
+  });
+
+  it('Can successfully find no intersections in a tree', ()=> {
+    let treeA = new BinaryTree();
+    treeA.add(new Node('Data'));
+    treeA.add(new Node('One'));
+    treeA.add(new Node('Three'));
+    treeA.add(new Node(3));
+    treeA.add(new Node(10));
+    treeA.add(new Node('yes'));
+
+    let treeB = new BinaryTree();
+    treeB.add(new Node('Data'));
+    treeB.add(new Node('two'));
+    treeB.add(new Node('four'));
+    treeB.add(new Node(11));
+    treeB.add(new Node(20));
+    treeB.add(new Node('no'));
+    let result = treeIntersection(treeA, treeB);
+    expect(result).toBeFalsy;
   });
 });
