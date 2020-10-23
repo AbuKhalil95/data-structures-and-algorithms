@@ -20,7 +20,7 @@ class Repeats {
     return null;
   }
 
-  AllRepeated(str) {
+  allRepeated(str) {
     let hashTable = new HashTable(1024);
     let charArr = str.split(/\W+/);
     let repeatedArr = [];

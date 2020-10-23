@@ -41,7 +41,7 @@ describe('Tree Intersection class-32', ()=> {
     treeB.add(new Node(10));
     treeB.add(new Node('no'));
     let result = treeIntersection(treeA, treeB);
-    expect(result).toEqual(["Data", "One", 10, 3]);
+    expect(result).toEqual(['Data', 'One', 10, 3]);
   });
 
   it('Can successfully find no intersections in a tree', ()=> {
