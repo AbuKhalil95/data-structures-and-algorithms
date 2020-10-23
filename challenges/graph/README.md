@@ -28,6 +28,7 @@ Starting the table by implementing 3 classes:
 - A `Graph` with `this.adjacencyList = new Map() {Array}` and `this.size {Integer}`
 
 First two classes are requirements to implement the third main class.
+Graph methods of getting neighbors involves using has() and get() map object method, which returns the existence and corresponding vertex immediately as a key value in an object. Time complexity is reduced to O(1) due to the key-value nature and space complexity is O(n) if we considered all inputted data is stored once.
 
 ## API
 ```
