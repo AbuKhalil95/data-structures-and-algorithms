@@ -28,16 +28,16 @@ describe('Repeated words successfully detected', ()=> {
 
   it('Successfully returns all repeated inputs', ()=> {
     let repeated = new Repeats();
-    expect(repeated.AllRepeated(inputA)).toEqual(
-    [ 
-      { once: 1 },
-      { upon: 1 },
-      { a: 2 },
-      { time: 1 },
-      { there: 1 },
-      { was: 1 },
-      { brave: 1 },
-      { princess: 1 },
-      { who: 1 } ]);
+    expect(repeated.allRepeated(inputA)).toEqual(
+      [
+        { once: 1 },
+        { upon: 1 },
+        { a: 2 },
+        { time: 1 },
+        { there: 1 },
+        { was: 1 },
+        { brave: 1 },
+        { princess: 1 },
+        { who: 1 } ]);
   });
 });

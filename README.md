@@ -7,11 +7,11 @@
 
 3 - [Binary Search](challenges/arrayBinarySearch)
 
-4 - [Linked List](challenges/linkedList)
+4 - [***Linked List DS Methods***](challenges/linkedList)
 
 5 - [Linked List Zipped](challenges/llZip)
 
-6 - [Stacks and Queues](challenges/stacksAndQueues)
+6 - [***Stacks and Queues DS Methods***](challenges/stacksAndQueues)
 
 7 - [Queue with Stacks](challenges/queueWithStacks)
 
@@ -19,7 +19,7 @@
 
 9 - [Brackets Balancing Algorithm](challenges/multiBracketValidation)
 
-10 - [Tree DS Methods](challenges/tree)
+10 - [***Tree DS Methods***](challenges/tree)
 
 11 - [Insertion Sort](challenges/insertionSort)
 
@@ -27,13 +27,15 @@
 
 13 - [Quick Sort](challenges/quickSort)
 
-14 - [Hashtable](challenges/hashtable)
+14 - [***Hashtable DS Methods***](challenges/hashtable)
 
 15 - [Repeated Words](challenges/repeatedWord)
 
 16 - [Tree Intersection](challenges/treeIntersection)
 
 17 - [Left Join](challenges/leftJoin)
+
+18 - [***Graphs DS Methods***](challenges/leftJoin)
 
 ## 301 DSA (Simplified)
 1 - [Array Methods - forEach](code-challenges/for-each)
