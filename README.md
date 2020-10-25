@@ -37,6 +37,8 @@
 
 18 - [***Graphs DS Methods***](challenges/leftJoin)
 
+19 - [Breadth First Traversal](challenges/breadthFirst)
+
 ## 301 DSA (Simplified)
 1 - [Array Methods - forEach](code-challenges/for-each)
 
