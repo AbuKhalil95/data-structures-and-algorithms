@@ -60,9 +60,9 @@ class Graph {
         edge += `${element.vertex.value},${element.weight} --> `;
       });
 
-      edge = edge.substring(0, edge.length - 6);
+      edge = edge.substring(0, edge.length - 5);
       if(edge) {
-        results.push(`[${vertex.value}] ---> ${edge} `);
+        results.push(`[${vertex.value}] ---> ${edge}`);
       } else {
         results.push(`[${vertex.value}] ---> null`);
       }
@@ -77,10 +77,6 @@ class Graph {
   getSize() {
     return this.size;
   }
-
-  // bfs() 
-  // dfs() 
-  // pathTo() 
 }
 
 module.exports.Vertex = Vertex;

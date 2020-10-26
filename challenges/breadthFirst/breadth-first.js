@@ -3,17 +3,25 @@ const Queue = require('../stacksAndQueues/stacks-and-queues').Queue;
 
 class BreadthFirst extends Graph {
 
-  BreadthFirstTraversal(startNode) {
+  traversal(startVertex) {
     const queue = new Queue();  
     const bfArray = [];
-    queue.enqueue(startNode);
+    queue.enqueue(startVertex);
   
     while (queue.peek()) {
-      const currentNode = queue.dequeue();
-      const neighbors = this.getNeighbors(currentNode);
-      // missing implementation
+      let currentVertex = queue.dequeue();
+      console.log('removing vertex', currentVertex);
+
+      if(!bfArray.includes(currentVertex.value)) bfArray.push(currentVertex.value);
+
+      let neighbors = this.getNeighbors(currentVertex);
+      console.log('currentNeighboors', neighbors);
+
+      neighbors.forEach(edge => {
+        console.log('adding vertex', edge.vertex);
+        if(queue.peek() !== edge.vertex) queue.enqueue(edge.vertex);
+      });
     }
-        
     return bfArray;
   }
 }

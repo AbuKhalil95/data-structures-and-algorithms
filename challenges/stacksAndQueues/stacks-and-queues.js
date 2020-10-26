@@ -64,21 +64,26 @@ class Queue {
     if(!this.front) {
       return 'Empty Queue!';
     }
-
+    let dequeuedNode = this.front;
     this.front = null;
-    let currentNode = this.back;
-    while (currentNode.next) {
-      currentNode = currentNode.next;
-    }
-
-    this.front = currentNode;
-
-    if (!this.front) {
+    if (!this.back.next) {
       this.back = null;
     }
 
-    console.log('dataaaaaaaaaaaa in queue \n',  currentNode, this.front)
-    return this.front;
+    let currentNode = this.back;
+    console.log('now queue: ', this);
+    if (currentNode) {
+      while (currentNode.next.next) {
+        currentNode = currentNode.next;
+      }
+      currentNode.next = null;
+    }
+ 
+    console.log('front should be: ', currentNode);
+
+    this.front = currentNode;
+
+    return dequeuedNode;
   }
 
   peek() {
