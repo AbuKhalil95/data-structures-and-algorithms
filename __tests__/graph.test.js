@@ -57,7 +57,7 @@ describe('Graphs are functional and working!', ()=> {
 
   it('A collection of all nodes can be properly retrieved from the graph', ()=> {
 
-    expect(graph.getNodes()).toEqual(['[2] ---> 7, ', '[3] ---> 8, ', '[6] ---> 7,0 --> 8, ', '[7] ---> null', '[8] ---> 7, ', '[10] ---> 2,0 --> 8, ']);
+    expect(graph.getNodes()).toEqual(['[2] ---> 7,0', '[3] ---> 8,7', '[6] ---> 7,0 --> 8,2', '[7] ---> null', '[8] ---> 7,0', '[10] ---> 2,0 --> 8,5']);
   });
 
   it('All appropriate neighbors can be retrieved from the graph', ()=> {
