@@ -39,6 +39,8 @@
 
 19 - [Breadth First Traversal](challenges/breadthFirst)
 
+20 - [Get Edges](challenges/getEdge)
+
 ## 301 DSA (Simplified)
 1 - [Array Methods - forEach](code-challenges/for-each)
 
