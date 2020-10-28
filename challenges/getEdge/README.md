@@ -15,5 +15,7 @@ The time complexity represents going through all of the available nodes, assumin
 
 Space complexity is O(1) with no extra storage used, other than for the input.
 
+The other undirected edge involves a hashtable to exclude the visited nodes, and make sure no circular pattern happens, thus increasing the space complexity to O(n) on the worst case scenario. 
+
 ## Solution
 ![whiteboard](../../resources/whiteboard-class-37.png)
