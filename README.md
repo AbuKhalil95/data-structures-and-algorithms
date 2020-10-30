@@ -39,6 +39,8 @@
 
 19 - [Breadth First Traversal](challenges/breadthFirst)
 
+20 - [Get Edges](challenges/getEdge)
+
 21 - [Depth First Traversal](challenges/depthFirst)
 
 ## 301 DSA (Simplified)

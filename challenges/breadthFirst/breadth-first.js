@@ -26,4 +26,4 @@ class BreadthFirst extends Graph {
   }
 }
 
-module.exports= BreadthFirst;
+module.exports = BreadthFirst;
