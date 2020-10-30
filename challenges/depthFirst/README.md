@@ -13,5 +13,7 @@ Now knowing DFT from past lab of tree's methods:
 
 Both implementations have a time complexity of O(n) since the first cuts time short with hashtable storage, but because of that the undirected has O(n^2) of double storage worst case scenario, given that both visited nodes and pushed nodes needs to be stored, otherwise with directed its just O(n) space complexity.
 
+Note: the change in code between depth-first traversal and breadth-first traversal is simply by replacing queue with stack implementation.
+
 ## Solution
 ![whiteboard](../../resources/whiteboard-class-38.png)
